@@ -96,5 +96,12 @@ h6 {
   }
 
 .btn-outline-light {
-	background-color: rgba(1,1,1,0.2)!important;	
+	background-color: rgba(1,1,1,0.2)!important;
+	width: 80%;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-weight: 600;
+}
+.btn-outline-light.shake {
+	font-weight: 800;
 }

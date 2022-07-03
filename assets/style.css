@@ -103,7 +103,8 @@ h6 {
 	font-weight: 600;
 }
 
-.btn-outline-light:hover {
+.btn-outline-light:hover,
+.btn-outline-light:active {
 	color: #f8f9fa !important;
 }
 

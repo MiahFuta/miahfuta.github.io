@@ -106,3 +106,8 @@ h6 {
 .btn-outline-light.shake {
 	font-weight: 800;
 }
+
+.fa-brands {
+	float: left !important;
+	font-size: x-large !important;
+}

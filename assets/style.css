@@ -104,7 +104,8 @@ h6 {
 }
 
 .btn-outline-light:hover,
-.btn-outline-light:active {
+.btn-outline-light:active,
+.btn-outline-light:focus{
 	color: #f8f9fa !important;
 }
 

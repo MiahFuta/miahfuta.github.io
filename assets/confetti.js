@@ -1,5 +1,5 @@
 var maxParticleCount = 100; //set max confetti count
-var particleSpeed = 50; //set the particle animation speed
+var particleSpeed = 1; //set the particle animation speed
 var startConfetti; //call to start confetti animation
 var stopConfetti; //call to stop adding confetti
 var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
@@ -114,7 +114,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 			else {
 				particle.tiltAngle += particle.tiltAngleIncrement;
 				particle.x += Math.sin(waveAngle);
-				particle.y += (Math.cos(waveAngle) + particle.diameter + particleSpeed) * 0.05;
+				particle.y += (Math.cos(waveAngle) + particle.diameter + particleSpeed) * 0.5;
 				particle.tilt = Math.sin(particle.tiltAngle) * 15;
 			}
 			if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {

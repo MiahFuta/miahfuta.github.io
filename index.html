@@ -12,12 +12,8 @@
 </head>
 
 <body>
-    <script src="assets/confetti.js"></script>
-    <script>
-        $(document).ready(function () {
-            startConfetti();
-        });
-    </script>
+    <div id="confetti-canvas">
+        
     <div class="container">
     <div class="col-xs-12">
             <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
@@ -60,6 +56,14 @@
             </div>
     </div>
     </div>
+        
+    </div>
+    <script src="assets/confetti.js"></script>
+    <script>
+        $(document).ready(function () {
+            startConfetti();
+        });
+    </script>
     <script src="assets/popper.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
 </body>

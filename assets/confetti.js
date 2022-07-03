@@ -1,130 +1,105 @@
-var maxParticleCount = 150; //set max confetti count
-var particleSpeed = 50; //set the particle animation speed
-var startConfetti; //call to start confetti animation
-var stopConfetti; //call to stop adding confetti
-var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
-var removeConfetti; //call to stop the confetti animation and remove all confetti immediately
+// 2014-08-18
+// 2019-09-30
+// copyright 2014, 2019-09-30 Xah Lee
+// feel free to use, but must give credit, link back to this page
+// from http://xahlee.info/js/js_raining_hearts.html
 
-(function() {
-	startConfetti = startConfettiInner;
-	stopConfetti = stopConfettiInner;
-	toggleConfetti = toggleConfettiInner;
-	removeConfetti = removeConfettiInner;
-	var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"]
-	var streamingConfetti = false;
-	var animationTimer = null;
-	var particles = [];
-	var waveAngle = 0;
-	
-	function resetParticle(particle, width, height) {
-		particle.color = colors[(Math.random() * colors.length) | 0];
-		particle.x = Math.random() * width;
-		particle.y = Math.random() * height - height;
-		particle.diameter = Math.random() * 10 + 5;
-		particle.tilt = Math.random() * 10 - 10;
-		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
-		particle.tiltAngle = 0;
-		return particle;
-	}
+{
 
-	function startConfettiInner() {
-		var width = window.innerWidth;
-		var height = window.innerHeight;
-		window.requestAnimFrame = (function() {
-			return window.requestAnimationFrame ||
-				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame ||
-				window.oRequestAnimationFrame ||
-				window.msRequestAnimationFrame ||
-				function (callback) {
-					return window.setTimeout(callback, 16.6666667);
-				};
-		})();
-		var canvas = document.getElementById("confetti-canvas");
-		if (canvas === null) {
-			canvas = document.createElement("canvas");
-			canvas.setAttribute("id", "confetti-canvas");
-			canvas.setAttribute("style", "position:absolute;top:0;z-index:999999;pointer-events:none");
-			document.body.prepend(canvas);
-			canvas.width = width;
-			canvas.height = height;
-			window.addEventListener("resize", function() {
-				canvas.width = window.innerWidth;
-				canvas.height = window.innerHeight;
-			}, true);
-		}
-		var context = canvas.getContext("2d");
-		while (particles.length < maxParticleCount)
-			particles.push(resetParticle({}, width, height));
-		streamingConfetti = true;
-		if (animationTimer === null) {
-			(function runAnimation() {
-				context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-				if (particles.length === 0)
-					animationTimer = null;
-				else {
-					updateParticles();
-					drawParticles(context);
-					animationTimer = requestAnimFrame(runAnimation);
-				}
-			})();
-		}
-	}
+    const num_of_hearts = 30;
+    const driftX = 50;
+    const gravity = 100;
+    const update_speed = 900; // millisecond
 
-	function stopConfettiInner() {
-		streamingConfetti = false;
-	}
+    // const heartTypes= [... "♥💕💓💔💖💗💘💝💞💟💙💚💛💜" ];
+    const heartTypes= [... "💔♥" ];
 
-	function removeConfettiInner() {
-		stopConfetti();
-		particles = [];
-	}
+    const viewportWidth = document.documentElement.clientWidth;
+    const viewportHeight = document.documentElement.clientHeight;
 
-	function toggleConfettiInner() {
-		if (streamingConfetti)
-			stopConfettiInner();
-		else
-			startConfettiInner();
-	}
+    const viewSpaceWidth = viewportWidth+50;
+    const viewSpaceHeight = viewportHeight+50;
 
-	function drawParticles(context) {
-		var particle;
-		var x;
-		for (var i = 0; i < particles.length; i++) {
-			particle = particles[i];
-			context.beginPath();
-			context.lineWidth = particle.diameter;
-			context.strokeStyle = particle.color;
-			x = particle.x + particle.tilt;
-			context.moveTo(x + particle.diameter / 2, particle.y);
-			context.lineTo(x, particle.y + particle.tilt + particle.diameter / 2);
-			context.stroke();
-		}
-	}
+    const randomInt = ((xmin,xmax) => (Math.floor( Math.random() * (xmax + 1 - xmin) + xmin )));
 
-	function updateParticles() {
-		var width = window.innerWidth;
-		var height = window.innerHeight;
-		var particle;
-		waveAngle += 0.01;
-		for (var i = 0; i < particles.length; i++) {
-			particle = particles[i];
-			if (!streamingConfetti && particle.y < -15)
-				particle.y = height + 100;
-			else {
-				particle.tiltAngle += particle.tiltAngleIncrement;
-				particle.x += Math.sin(waveAngle);
-				particle.y += (Math.cos(waveAngle) + particle.diameter + particleSpeed) * 0.05;
-				particle.tilt = Math.sin(particle.tiltAngle) * 15;
-			}
-			if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
-				if (streamingConfetti && particles.length <= maxParticleCount)
-					resetParticle(particle, width, height);
-				else {
-					particles.splice(i, 1);
-					i--;
-				}
-			}
-		}
-	}
-})();
+    const randomReal = ((xmin,xmax) => ( Math.random() * (xmax - xmin) + xmin ));
+
+    const randomColor = (() => ("hsla" + "(" + randomInt(0,360) + "," +
+                                randomInt(70,100) + "%," +
+                                randomInt(40,60) + "%," +
+                                randomReal(.8,1) + ")" ) );
+
+    const f_restart_heart = ((xx) => {
+        xx["xxleft"]=randomInt(0, viewSpaceWidth);
+        xx.style.left= xx["xxleft"] + "px";
+        xx["xxtop"]=randomInt(0, viewSpaceHeight) - viewSpaceHeight;
+        xx.style.top= xx["xxtop"] + "px";
+        xx["xrotate"] = randomInt(-150, 150);
+        xx.style.transform = "rotate(" + xx["xrotate"] + "deg)";
+    });
+
+    const heart_box = document.createElement("div");
+    heart_box.setAttribute("id","heart_box");
+
+    const f_new_heart = (() => {
+        const yy = document.createElement("div");
+        yy. textContent= heartTypes[Math.floor( Math.random() * heartTypes.length )];
+        yy["xxleft"]=randomInt(0, viewSpaceWidth);
+        yy.style.left= yy["xxleft"] + "px";
+        yy["xxtop"]= -90;
+        yy.style.top= yy["xxtop"] + "px";
+        yy["xrotate"] = randomInt(-150, 150);
+        yy.style.transform = "rotate(" + yy["xrotate"] + "deg)";
+        yy.style.color = randomColor();
+        yy["xsize"]= 10 + randomInt(0,30);
+        yy.style.fontSize = yy["xsize"] + "px";
+
+        yy.style.position="fixed";
+        yy.style.zIndex= randomInt(100,9999) .toString();
+        yy.style.transition= "top linear 1.5s, left linear 1.5s, transform linear 1.5s";
+        // f_restart_heart(yy);
+        return yy;
+    });
+
+    { for (let i=0; i < num_of_hearts; i++) { heart_box.appendChild( f_new_heart()) } } ;
+
+    document.body.appendChild(heart_box);
+
+    const heartNodes = Array.from (heart_box.children);
+
+    const f_update_positions = (() => {
+
+        heartNodes.forEach (((xx: HTMLElement) => {
+            xx["xxleft"] +=
+                (() => {
+                    const rnd = Math.random();
+                    if ( rnd < 0.3333 ) {
+                        return 0;
+                    } else if ( rnd < 0.6666) {
+                        return driftX;}
+                    else {
+                        return - driftX;
+                    }
+                }) ();
+
+            xx["xxtop"] = xx["xxtop"] + ( (xx["xsize"]/20) * (gravity) );
+
+            if ( xx["xxtop"] > (viewSpaceHeight) + viewSpaceHeight/10 ) {
+                f_restart_heart(xx);
+            } else {
+                xx["xxtop"] = xx["xxtop"] + gravity /10 * randomInt(0,10); };
+
+            if ( xx["xrotate"] !== 0 ) {
+                xx["xrotate"] = xx["xrotate"] + randomInt(-30,60);
+                xx.style.transform = "rotate(" + xx["xrotate"] + "deg)";
+            };
+
+            xx.style.left = xx["xxleft"] + "px";
+            xx.style.top = xx["xxtop"] + "px";
+        }))
+
+    });
+
+    setInterval( f_update_positions , update_speed);
+}
+;

@@ -11,8 +11,8 @@
     const update_speed = 900; // millisecond
     // const heartTypes= [... "♥💕💓💔💖💗💘💝💞💟💙💚💛💜" ];
     const heartTypes = [..."♥"];
-    const viewportWidth = document.documentElement.clientWidth;
-    const viewportHeight = document.documentElement.clientHeight;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
     const viewSpaceWidth = viewportWidth + 50;
     const viewSpaceHeight = viewportHeight + 50;
     const f_randomInt = ((xmin, xmax) => (Math.floor(Math.random() * (xmax + 1 - xmin) + xmin)));

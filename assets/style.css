@@ -103,6 +103,10 @@ h6 {
 	font-weight: 600;
 }
 
+.btn-outline-light:hover {
+	color: #f8f9fa !important;
+}
+
 .btn-outline-light.shake {
 	font-weight: 800;
 }

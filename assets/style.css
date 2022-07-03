@@ -107,7 +107,8 @@ h6 {
 	font-weight: 800;
 }
 
-.fa-brands {
+.fa-brands,
+.fa-solid {
 	float: left !important;
 	font-size: x-large !important;
 }

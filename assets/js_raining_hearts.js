@@ -44,7 +44,7 @@
         yy["xsize"] = 10 + f_randomInt(0, 30);
         yy.style.fontSize = yy["xsize"] + "px";
         yy.style.position = "fixed";
-        yy.style.zIndex = f_randomInt(100, 9000).toString();
+        yy.style.zIndex = f_randomInt(100, 9999).toString();
         yy.style.transition = "top linear 1.5s, left linear 1.5s, transform linear 1.5s";
         // f_restart_heart(yy);
         return yy;

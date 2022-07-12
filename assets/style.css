@@ -60,7 +60,7 @@ h6 {
     -webkit-animation: rotateAnimation 3s linear infinite;
     -ms-animation: rotateAnimation 3s linear infinite;
     animation: rotateAnimation 3s linear infinite;
-    z-index:9999;
+    z-index:9999 !important;
 }
 
 .btn-outline-light {
@@ -69,6 +69,7 @@ h6 {
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: 500 !important;
+    z-index:9999 !important;
 }
 
 .btn-outline-light:hover,
@@ -96,6 +97,7 @@ h6 {
     font-family: 'Pacifico', cursive;
     text-shadow: 2px 2px 4px #000000;
     font-size: 40px;
+    z-index:9999 !important;
     -webkit-animation: rainbow 5s infinite;
     -ms-animation: rainbow 5s infinite;
     animation: rainbow 5s infinite;

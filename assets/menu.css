@@ -30,6 +30,8 @@ ul li a:focus,
 ul li a:active {
     text-decoration: none;
     color: white;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 ul li:hover {
@@ -51,7 +53,7 @@ label:before {
     margin-right: 10px;
     transition: all .5s;
     position: relative;
-    opacity: 0.5;
+    opacity: 0.75;
     right: calc(-55px);
 }
 

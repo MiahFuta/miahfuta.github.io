@@ -26,7 +26,10 @@
 //     }
 // }
 
-$(document).ready(function () {
+
+
+
+jQuery(document).ready(function($){
     $(function(){
         $("#includedContent").load("menu.html");
     });

@@ -1,13 +1,4 @@
-// includeHTML();
-
-window.onload = async function() {
-
-    // let y = 0;
-    // setTimeout(() => {
-    //     for (i=0; i<10; i++) {
-    //        y++;
-    //     }
-    // }, 3000);
+$(document).ready(function () {
 
     document.getElementById("menu").style.width = "50px";
 
@@ -21,4 +12,4 @@ window.onload = async function() {
     }
     });
 
-}
+});

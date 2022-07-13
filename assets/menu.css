@@ -52,7 +52,7 @@ label:before {
     transition: all .5s;
     position: relative;
     opacity: 0.5;
-    right: calc(-105px);
+    right: calc(-55px);
 }
 
 label {

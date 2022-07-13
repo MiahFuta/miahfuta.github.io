@@ -26,6 +26,8 @@
 //     }
 // }
 
-$(function(){
-    $("#includedContent").load("menu.html");
+$(document).ready(function () {
+    $(function(){
+        $("#includedContent").load("menu.html");
+    });
 });

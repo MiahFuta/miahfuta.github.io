@@ -26,10 +26,7 @@
 //     }
 // }
 
-
-
-
-jQuery(document).ready(function($){
+$(document).ready(function () {
     $(function(){
         $("#includedContent").load("menu.html");
     });

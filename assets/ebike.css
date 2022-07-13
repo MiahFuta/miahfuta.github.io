@@ -1,7 +1,16 @@
-h4 {
+.btn-link {
     color: white !important;
     text-shadow: 2px 2px 4px #000000;
-    font-size: 40px;
+    font-size: 38px;
+}
+
+.btn-link,
+.btn-link:link,
+.btn-link:visited,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+    text-decoration: none;
 }
 
 hr {
@@ -9,17 +18,28 @@ hr {
     height: 1px;
     margin-bottom: 1.5em;
     margin-top: 1.5em;
-    background-color: white;
+    background-color: rgba(0,0,0,0.2);
     border-color: initial;
 }
 
-p {
+.card {
+    background-color: transparent;
+    border-radius: 15px;
+    overflow:hidden;
+    margin-bottom: 15px;
+}
+
+.card-header {
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.2);
+    border:none;
+}
+
+.card-body {
     font-weight: 500;
     font-size: large;
     color: white;
-    text-shadow: 1px 1px 2px #000000;
-}
-
-p strong {
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 2px #000000;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.1);
 }

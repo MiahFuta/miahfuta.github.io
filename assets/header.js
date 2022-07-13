@@ -1,3 +1,3 @@
 $(function(){
-    $("#includedContent").load("menu.html");
+    $("#includeMenu").load("menu.html");
 });

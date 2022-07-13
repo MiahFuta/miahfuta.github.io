@@ -1,16 +1,4 @@
-$(document).ready(function () {
-
-    // document.getElementById("menu").style.width = "50px";
-
-    // var checkbox = document.querySelector("input[name=checkbox]");
-
-    // checkbox.addEventListener('change', function() {
-    // if (this.checked) {
-    //     document.getElementById("menu").style.width = "50px";
-    // } else {
-    //     document.getElementById("menu").style.width = "200px";
-    // }
-    // });
+$(window).load(function(){
 
     $("#menu").css("width", "50px");
 
@@ -22,5 +10,5 @@ $(document).ready(function () {
                 $("#menu").css("width", "200px");
             }
         });
-
+        
 });

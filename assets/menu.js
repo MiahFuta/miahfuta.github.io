@@ -1,6 +1,6 @@
-includeHTML();
-
 async function processMenu() {
+
+    await includeHTML();
 
     document.getElementById("menu").style.width = "50px";
 

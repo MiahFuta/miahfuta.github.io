@@ -2,12 +2,12 @@ includeHTML();
 
 window.onload = async function() {
 
-    let y = 0
+    let y = 0;
     setTimeout(() => {
         for (i=0; i<3; i++) {
-           y++
+           y++;
         }
-    }, 2000)
+    }, 2000);
 
     document.getElementById("menu").style.width = "50px";
 

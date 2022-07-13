@@ -4,7 +4,7 @@ $(window).on('load', function () {
 
         $("#menu").css("width", "50px");
 
-        $('input[type=checkbox]').change( function(){
+        $('#menu :checkbox').change( function(){
             if (this.checked) {
                 $("#menu").css("width", "50px");
             } else {
@@ -13,5 +13,5 @@ $(window).on('load', function () {
         });
 
     }, 2000);
-    
+
 });

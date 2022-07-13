@@ -7,7 +7,9 @@ function initialLoad() {
   
 async function processMenu() {
 
-    const result = await initialLoad()
+    const result = await initialLoad();
+
+    setTimeout(() => { for (i=0; i<3; i++) {} }, 2000);
 
     document.getElementById("menu").style.width = "50px";
 

@@ -1,28 +1,24 @@
-async function initialLoad() {
-    return new Promise((resolve, reject) => {
-        includeHTML();
-        resolve(true);
-    });
-}
-  
-async function processMenu() {
+includeHTML();
 
-    const result = await initialLoad();
+window.onload = async function() {
 
-    setTimeout(() => { for (i=0; i<3; i++) {} }, 2000);
+    let y = 0
+    setTimeout(() => {
+        for (i=0; i<3; i++) {
+           y++
+        }
+    }, 2000)
 
     document.getElementById("menu").style.width = "50px";
 
     var checkbox = document.querySelector("input[name=checkbox]");
 
     checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            document.getElementById("menu").style.width = "50px";
-        } else {
-            document.getElementById("menu").style.width = "200px";
-        }
+    if (this.checked) {
+        document.getElementById("menu").style.width = "50px";
+    } else {
+        document.getElementById("menu").style.width = "200px";
+    }
     });
 
-}; 
-
-processMenu()
+}

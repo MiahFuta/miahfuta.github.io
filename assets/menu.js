@@ -8,7 +8,7 @@ $(window).on('load', function () {
             if (this.checked) {
                 $("#menu").css("width", "50px");
             } else {
-                $("#menu").css("width", "200px");
+                $("#menu").css("width", "100px");
             }
         });
 

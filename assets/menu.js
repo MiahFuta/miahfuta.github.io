@@ -7,5 +7,7 @@ $('input[type=checkbox]').change( function(){
 });
 
 $(window).on('load', function () {
-    $("#menu").css("width", "50px");
+    setTimeout(function() {
+        $("#menu").css("width", "50px");
+    }, 2000);
 });

@@ -1,4 +1,4 @@
-function initialLoad() {
+async function initialLoad() {
     return new Promise((resolve, reject) => {
         includeHTML();
         resolve(true);

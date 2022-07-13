@@ -1,6 +1,6 @@
 includeHTML();
 
-window.onload = async function() {
+async function processMenu() {
 
     document.getElementById("menu").style.width = "50px";
 
@@ -15,3 +15,5 @@ window.onload = async function() {
     });
 
 }
+
+processMenu();

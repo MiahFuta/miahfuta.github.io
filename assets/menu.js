@@ -7,7 +7,7 @@ window.onload = async function() {
         for (i=0; i<10; i++) {
            y++;
         }
-    }, 2000);
+    }, 3000);
 
     document.getElementById("menu").style.width = "50px";
 

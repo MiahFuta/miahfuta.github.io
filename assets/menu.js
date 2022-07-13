@@ -1,13 +1,13 @@
-includeHTML();
+// includeHTML();
 
 window.onload = async function() {
 
-    let y = 0;
-    setTimeout(() => {
-        for (i=0; i<10; i++) {
-           y++;
-        }
-    }, 3000);
+    // let y = 0;
+    // setTimeout(() => {
+    //     for (i=0; i<10; i++) {
+    //        y++;
+    //     }
+    // }, 3000);
 
     document.getElementById("menu").style.width = "50px";
 

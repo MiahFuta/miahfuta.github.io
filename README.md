@@ -1,7 +1,5 @@
-Miah's Social Links
+Some of My Custom Pages
 
-[miahfuta.github.io](https://miahfuta.github.io)
+[Miah's Social Links](https://miahfuta.github.io)
 
-Miah's E-Bike Showcase
-
-[miahfuta.github.io](https://miahfuta.github.io/ebike.html)
+[Miah's E-Bike Showcase](https://miahfuta.github.io/ebike.html)

@@ -101,18 +101,18 @@ hr {
 }
 
 .carousel-caption {
-    text-shadow: 4px 4px 4px #000000 !important;
-    font-weight: 500 !important;
-    padding-bottom: 0 !important;
-    bottom: 0 !important;
+    text-shadow: 4px 4px 4px #000000;
+    font-weight: 500;
+    padding-bottom: 0;
+    bottom: 0;
 }
 
 .carousel-caption h5 {
-    font-size: xx-large !important;
-    font-weight: 800 !important;
+    font-size: xx-large;
+    font-weight: 800;
 }
 
 .carousel-caption p {
-    font-size: x-large !important;
-    font-weight: 600 !important;
+    font-size: x-large;
+    font-weight: 600;
 }

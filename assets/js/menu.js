@@ -1,13 +1,3 @@
-$('#menu :checkbox').change( function(){
-    if (this.checked) {
-        $("#menu").css("width", "50px");
-        $("#menu").css("opacity", "0.5");
-    } else {
-        $("#menu").css("width", "100px");
-        $("#menu").css("opacity", "1");
-    }
-});
-
 $("#menu").on("mouseover", function () {
     $("#menu").css("opacity", "1");
 });

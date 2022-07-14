@@ -15,12 +15,11 @@ ul {
 
 ul li {
     display: block;
-    /* height: 20px; */
     background: rgb(219, 43, 205);
     padding: 10px;
     color: white;
     border-top: 1px solid rgba(0, 0, 0, .5);
-    text-align: right;
+    text-align: center;
 }
 
 ul li a:link,

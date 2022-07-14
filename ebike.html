@@ -2,8 +2,12 @@
 <!-- Start Head -->
 <head>
     <title>Miah's eBike Mods</title>
-    <!-- Import Meta -->
-    <div data-includeHTML="meta.html"></div>
+    <!-- Start Meta -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicon-16x16.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- End Meta -->
     <!-- Start Styles -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -21,8 +25,14 @@
 </head>
 <!-- End Head -->
 <body>
-    <!-- Import Menu -->
-    <div data-includeHTML="menu.html"></div>
+    <!-- Start Menu -->
+    <ul id="menu">
+        <input type="checkbox" id="collapse" name="checkbox" checked/> 
+        <label for="collapse"></label>    
+        <li><a href="/index.html">Socials</a></li>
+        <li><a href="/ebike.html">E-Bike</a></li>
+    </ul>
+    <!-- End Menu -->
     <!-- Start Page Header -->
     <div class="container">
         <div class="col-xs-12">
@@ -261,8 +271,15 @@
         </div>
     </div>
     <!-- End Body -->
-    <!-- Import Footer -->
-    <div data-includeHTML="footer.html"></div>
+    <!-- Start Copyright -->
+    <div class="container">
+        <div class="col-xs-12">
+            <div class="text-center" id="footer-copyright" style="padding-top: 30px; padding-bottom: 30px;">
+                &copy; SoWhoYou Inc. 2014-2022 All Rights Reserved.
+            </div>
+        </div>
+    </div>
+    <!-- End Copyright -->
     <!-- Start Scripts -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/menu.js"></script>

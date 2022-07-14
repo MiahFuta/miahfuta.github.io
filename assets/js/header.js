@@ -1,3 +1,3 @@
 $(function(){
-    $("#includeMenu").load("assets/imports/menu.html");
+    $("#includeMenu").load("menu.html");
 });

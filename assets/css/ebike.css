@@ -44,3 +44,9 @@ hr {
     border-top: 1px solid rgba(0,0,0,0.2);
     background-color: rgba(0,0,0,0.1);
 }
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    height: 50px !important;
+    width: 50px !important;
+}

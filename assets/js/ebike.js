@@ -44,18 +44,36 @@ $('.address').click(function(event) {
     CopyToClipboard(target.innerHTML);
 });
 
-$(function () {
-    $('#accordion').on('shown.bs.collapse', function (e) {
-        var offset = $('.panel.panel-default > .panel-collapse.in').offset();
-        if(offset) {
-            $('html,body').animate({
-                scrollTop: $('.panel-title a').offset().top -20
-            }, 500); 
-        }
-    }); 
-});
+// $(function () {
+//     $('#accordion').on('shown.bs.collapse', function (e) {
+//         var offset = $('.panel.panel-default > .panel-collapse.in').offset();
+//         if(offset) {
+//             $('html,body').animate({
+//                 scrollTop: $('.panel-title a').offset().top -20
+//             }, 500); 
+//         }
+//     }); 
+// });
 
 // $(window).on('load', function () {
 //     setTimeout(function() {
 //     }, 100);
 // });
+
+$(document).ready(function($) {
+
+    $('.collapse').on('show.bs.collapse', function(e) {
+        var $card = $(this).closest('.card');
+        var $open = $($(this).data('parent')).find('.collapse.show');
+        
+        var additionalOffset = 0;
+        if($card.prevAll().filter($open.closest('.card')).length !== 0)
+        {
+              additionalOffset =  $open.height();
+        }
+        $('html,body').animate({
+          scrollTop: $card.offset().top - additionalOffset
+        }, 500);
+    });
+
+});

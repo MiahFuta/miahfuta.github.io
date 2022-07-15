@@ -21,5 +21,13 @@ $(window).on('load', function () {
             // $('input#collapse').prop("checked", true);
         });
 
+        $(window).click(function() {
+            $('input#collapse').prop("checked", true);
+        });
+        
+        $('#menu').click(function(event) {
+            event.stopPropagation();
+        });
+
     }, 100);
 });

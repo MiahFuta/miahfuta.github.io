@@ -152,4 +152,5 @@ hr {
     border-radius: 5px;
     margin-left: 5px;
     margin-top: 10px;
+    max-width: 100%;
 }

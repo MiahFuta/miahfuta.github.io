@@ -17,10 +17,8 @@ $(window).on('load', function () {
         });
         
         $("#menu").on("mouseleave", function () {
-            setTimeout(function() {
-                $("#menu").css("opacity", "0.5");
-                $('input#collapse').prop("checked", true);
-            }, 1000);
+            $("#menu").css("opacity", "0.5");
+            // $('input#collapse').prop("checked", true);
         });
 
     }, 100);

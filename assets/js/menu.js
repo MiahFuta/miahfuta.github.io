@@ -13,12 +13,10 @@ $(window).on('load', function () {
 
         $("#menu").on("mouseover", function () {
             $("#menu").css("opacity", "1");
-            // $('input#collapse').prop("checked", false);
         });
         
         $("#menu").on("mouseleave", function () {
             $("#menu").css("opacity", "0.5");
-            // $('input#collapse').prop("checked", true);
         });
 
         $(window).click(function() {

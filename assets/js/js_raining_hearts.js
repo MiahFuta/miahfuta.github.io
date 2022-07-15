@@ -5,12 +5,12 @@
 // feel free to use, but must give credit, link back to this page
 // from http://xahlee.info/js/js_raining_hearts.html
 {
-    const num_of_hearts = 30;
+    const num_of_hearts = 50;
     const driftX = 50;
     const gravity = 100;
     const update_speed = 900; // millisecond
-    // const heartTypes= [... "♥💕💓💔💖💗💘💝💞💟💙💚💛💜" ];
-    const heartTypes = [..."♥"];
+    const heartTypes= [... "♥❤️🧡💛💚💙💜" ];
+    // const heartTypes = [..."♥"];
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     const viewSpaceWidth = viewportWidth + 50;

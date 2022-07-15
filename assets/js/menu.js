@@ -17,8 +17,10 @@ $(window).on('load', function () {
         });
         
         $("#menu").on("mouseleave", function () {
-            $("#menu").css("opacity", "0.5");
-            $('input#collapse').prop("checked", true);
+            setTimeout(function() {
+                $("#menu").css("opacity", "0.5");
+                $('input#collapse').prop("checked", true);
+            }, 2000);
         });
 
     }, 100);

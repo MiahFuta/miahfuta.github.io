@@ -17,6 +17,19 @@
     display: block;
 }
 
+
+.card-body a,
+.card-body a:link,
+.card-body a:visited,
+.card-body a:hover,
+.card-body a:focus,
+.card-body a:active {
+    text-decoration: none;
+    color: white !important;
+    text-shadow: 2px 2px 4px #000000;
+    padding-bottom: 10px;
+}
+
 .btn.btn-link:after {
     content: "\f107";
     font-family: 'Font Awesome 5 Free';
@@ -115,4 +128,14 @@ hr {
 .carousel-caption p {
     font-size: x-large;
     font-weight: 600;
+}
+
+.card .fa-link,
+.card .fa-brands {
+    float: none !important;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    position: relative;
+    top: 3px;
 }

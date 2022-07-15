@@ -55,20 +55,7 @@ $(function () {
     }); 
 });
 
-$(window).on('load', function () {
-
-    setTimeout(function() {
-
-        $('#accordion').on('shown.bs.collapse', function () {
-     
-            var panel = $(this).find('.collapse.show');
-             
-            $('html, body').animate({
-                scrollTop: panel.offset().top - '86'
-            }, 0);
-             
-        });
-
-    }, 100);
-    
-});
+// $(window).on('load', function () {
+//     setTimeout(function() {
+//     }, 100);
+// });

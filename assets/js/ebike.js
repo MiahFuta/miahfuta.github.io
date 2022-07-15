@@ -43,3 +43,32 @@ $('.address').click(function(event) {
     var target = event.target || event.srcElement;
     CopyToClipboard(target.innerHTML);
 });
+
+$(function () {
+    $('#accordion').on('shown.bs.collapse', function (e) {
+        var offset = $('.panel.panel-default > .panel-collapse.in').offset();
+        if(offset) {
+            $('html,body').animate({
+                scrollTop: $('.panel-title a').offset().top -20
+            }, 500); 
+        }
+    }); 
+});
+
+$(window).on('load', function () {
+
+    setTimeout(function() {
+
+        $('#accordion').on('shown.bs.collapse', function () {
+     
+            var panel = $(this).find('.collapse.show');
+             
+            $('html, body').animate({
+                scrollTop: panel.offset().top - '86'
+            }, 0);
+             
+        });
+
+    }, 100);
+    
+});

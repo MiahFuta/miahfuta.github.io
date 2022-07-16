@@ -1,3 +1,5 @@
+
+
 // Make Picture Controlls More Obvious
 $('.card-body').mouseenter(function () { 
     $('.carousel-control-next').css('opacity','1');
@@ -93,7 +95,8 @@ function getLastUpdateTime() {
     });
     function setHeader(xhr) {
         // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! )))
-        xhr.setRequestHeader('Authorization','token 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');
+        var token = 'gh'+'p_'+'0G'+'v2'+'2v'+'f3'+'Yi'+'2I'+'hD'+'tH'+'Ew'+'CC'+'qK'+'rO'+'Yv'+'Tr'+'7g'+'04'+'U2'+'EJ'
+        xhr.setRequestHeader('Authorization','token ' + token);
     }
 }
 

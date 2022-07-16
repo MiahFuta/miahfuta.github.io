@@ -63,11 +63,12 @@ h6 {
 }
 
 .btn-outline-light {
-    background-color: rgba(1, 1, 1, 0.2) !important;
+    background-color: rgba(1, 1, 1, 0.3) !important;
     width: 80.5%;
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: 500 !important;
+    z-index: 9999 !important;
 }
 
 .btn-outline-light:hover,
@@ -101,8 +102,13 @@ h6 {
 }
 
 #footer-copyright {
-    text-shadow: 0px 0px 6px #000000;
+    text-shadow: 0px 0px 4px #000000;
     font-size: medium;
+}
+
+small {
+    opacity: 0.5;
+    font-size: 70%;
 }
 
 /* Start Background */

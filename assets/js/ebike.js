@@ -38,7 +38,7 @@ function replaceUpdated() {
         newtime = new Date(time);     
         let hours = newtime.getHours();
         let minutes = newtime.getMinutes();
-        let ampm = hours >= 12 ? 'pm' : 'am';
+        let ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12;
         hours = hours ? hours : 12;
         minutes = minutes.toString().padStart(2, '0');

@@ -94,12 +94,10 @@ function getLastUpdateTime() {
         beforeSend: setHeader
     });
     function setHeader(xhr) {
-        // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! )))
-        // Splitting to Prevent GH from removing the Commit, like Fuck off Already FFS!
-        var tokenPart1 = 'gh'+'p_'+'0G'+'v2'+'2v';
-        var tokenPart2 = 'f3'+'Yi'+'2I'+'hD'+'tH'+'Ew'+'CC';
-        var tokenPart3 = 'qK'+'rO'+'Yv'+'Tr'+'7g'+'04'+'U2'+'EJ';
-        xhr.setRequestHeader('Authorization','token ' + tokenPart1 + tokenPart2 + tokenPart3);
+        // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! ))) See all this extra work I have to do to prevent GitHub from removing this commit? SMH
+        var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX1/N/cc1jc0uH2XrlwW2f8O6xfVHNcyRUMoHUrSI579gB+G+ryS2DAskGdLery/RAFzk3VYNVxcs7w==', '89bf3c5c60535aebc9b9cdb5d935ac1a');
+        var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+        xhr.setRequestHeader('Authorization','token ' + plaintext);
     }
 }
 

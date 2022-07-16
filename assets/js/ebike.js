@@ -29,10 +29,36 @@ function replaceAge() {
     return age;
 }
 
+function replaceUpdated() {
+    var jqxhr = $.getJSON( "https://api.github.com/repos/MiahFuta/miahfuta.github.io/commits?path=ebike.html&page=1&per_page=1", function() {
+        console.log( "success" );
+    })
+    .done(function() {
+        var time = jqxhr.responseJSON[0]['commit']['committer']['date'];
+        newtime = new Date(time);     
+        let hours = newtime.getHours();
+        let minutes = newtime.getMinutes();
+        let ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes.toString().padStart(2, '0');
+        let strTime = hours + ':' + minutes + ' ' + ampm;
+        var reply = 'Last Updated: ' + (newtime.getMonth() + '/' + newtime.getDate() + '/' + newtime.getFullYear());
+        $("#lastUpdated").html(reply + ' at ' + strTime);
+    })
+    .fail(function() {
+        console.log( "error" );
+    })
+    .always(function() {
+        console.log( "complete" );
+    });
+}
+
 $(window).on('load', function () {
     setTimeout(function() {
 
         $("#age").replaceWith(replaceAge());
+        replaceUpdated();
 
     }, 100);
 });

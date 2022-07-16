@@ -71,6 +71,7 @@ h6 {
     -webkit-animation: rotateAnimation 3s linear infinite;
     -ms-animation: rotateAnimation 3s linear infinite;
     animation: rotateAnimation 3s linear infinite;
+    z-index: -1;
 }
 
 .btn-outline-light {

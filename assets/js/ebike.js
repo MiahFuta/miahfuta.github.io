@@ -95,6 +95,7 @@ function getLastUpdateTime() {
     });
     function setHeader(xhr) {
         // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! )))
+        // Splitting to Prevent GH from removing the Commit, like Fuck off Already FFS!
         var tokenPart1 = 'gh'+'p_'+'0G'+'v2'+'2v';
         var tokenPart2 = 'f3'+'Yi'+'2I'+'hD'+'tH'+'Ew'+'CC';
         var tokenPart3 = 'qK'+'rO'+'Yv'+'Tr'+'7g'+'04'+'U2'+'EJ';

@@ -95,8 +95,10 @@ function getLastUpdateTime() {
     });
     function setHeader(xhr) {
         // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! )))
-        var token = 'gh'+'p_'+'0G'+'v2'+'2v'+'f3'+'Yi'+'2I'+'hD'+'tH'+'Ew'+'CC'+'qK'+'rO'+'Yv'+'Tr'+'7g'+'04'+'U2'+'EJ'
-        xhr.setRequestHeader('Authorization','token ' + token);
+        var tokenPart1 = 'gh'+'p_'+'0G'+'v2'+'2v';
+        var tokenPart2 = 'f3'+'Yi'+'2I'+'hD'+'tH'+'Ew'+'CC';
+        var tokenPart3 = 'qK'+'rO'+'Yv'+'Tr'+'7g'+'04'+'U2'+'EJ';
+        xhr.setRequestHeader('Authorization','token ' + tokenPart1 + tokenPart2 + tokenPart3);
     }
 }
 

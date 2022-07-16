@@ -95,7 +95,7 @@ function getLastUpdateTime() {
     });
     function setHeader(xhr) {
         // Set Auth Token ((( No Scopes are Included! Only Public Data can be seen! ))) See all this extra work I have to do to prevent GitHub from removing this commit? SMH
-        var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX1/N/cc1jc0uH2XrlwW2f8O6xfVHNcyRUMoHUrSI579gB+G+ryS2DAskGdLery/RAFzk3VYNVxcs7w==', '89bf3c5c60535aebc9b9cdb5d935ac1a');
+        var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX192ftdxDA8VoGKYES4tRYAyNamYRDo8E5++AFTa4SryvRFcpzBv2oSkOlbmQjqufhj40lq199I52g==', '89bf3c5c60535aebc9b9cdb5d935ac1a');
         var plaintext = bytes.toString(CryptoJS.enc.Utf8);
         xhr.setRequestHeader('Authorization','token ' + plaintext);
     }

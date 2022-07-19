@@ -38,6 +38,7 @@ $('.address').click(function(event) {
 // Scroll to Expanded Card
 $(document).ready(function($) {
     $('.collapse').on('show.bs.collapse', function(e) {
+        theBigPause();
         var $card = $(this).closest('.card');
         var $open = $($(this).data('parent')).find('.collapse.show');
         var additionalOffset = 0;
@@ -117,3 +118,52 @@ $(window).on('load', function () {
         getLastUpdateTime();
     }, 100);
 });
+
+// Start Video Carousel
+const videos = [];
+const tag = document.createElement("script");
+const firstScriptTag = document.getElementsByTagName("script")[0];
+
+tag.src = "https://www.youtube.com/iframe_api";
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// YouTube wants this function, don't rename it
+function onYouTubeIframeAPIReady() {
+  const slides = Array.from(document.querySelectorAll(".carousel-item"));
+  slides.forEach((slide, index) => {
+    // does this slide have a video?
+    const video = slide.querySelector(".video-player");
+    if (video && video.dataset) {
+      const player = createPlayer({
+        id: video.id,
+        videoId: video.dataset.videoId,
+      });
+      videos.push({ player, index });
+    }
+  });
+}
+
+function createPlayer(playerInfo) {
+  return new YT.Player(playerInfo.id, {
+    videoId: playerInfo.videoId,
+    playerVars: {
+      showinfo: 0,
+    },
+  });
+}
+
+function theBigPause() {
+  videos.map((video) => video.player.pauseVideo());
+}
+
+$(function () {
+  $(".carousel").on("slide.bs.carousel", function (e) {
+    theBigPause();
+    const next = $(e.relatedTarget).index();
+    const video = videos.filter((v) => v.index === next)[0];
+    if (video) {
+    //   video.player.playVideo();
+    }
+  });
+});
+// End Video Carousel

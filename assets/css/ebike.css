@@ -150,7 +150,7 @@ hr {
 .fa-solid.fa-arrow-down,
 .fa-solid.fa-qrcode {
     float: none !important;
-    /* padding: 10px; */
+    padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
     position: relative;
@@ -181,7 +181,7 @@ hr {
 
 .donoQR {
     display:inline-block;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .pplink,

@@ -167,3 +167,13 @@ $(function () {
   });
 });
 // End Video Carousel
+
+// Start Fix Dono for Mobile
+$(window).on('load', function () {
+    if (jQuery.browser.mobile) {
+        $('div.donoQR').replaceWith('');
+        $('div.donoName').css('margin-right', '0px');
+        $('.fa-solid.fa-arrow-down').css('padding-right', '0px');
+    }
+});
+// End Fix Dono for Mobile

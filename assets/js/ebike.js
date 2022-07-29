@@ -89,9 +89,11 @@ function getLastUpdateTime() {
                     var theTime = hours + ':' + minutes + ' ' + ampm;
                     $("#lastUpdated").html('Page Last Updated: ' + theDate + ' at ' + theTime + ' EST.');
                     $("#lastReason").html('<div id="reason">Update Reason: ' + message + '</div>');
+                    $(".update-block").css('display', 'inline-block');
                 } else {
                     $("#lastUpdated").replaceWith('');
                     $("#lastReason").replaceWith('');
+                    $(".update-block").css('display', 'none');
                 }
             }
         },

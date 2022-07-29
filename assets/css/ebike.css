@@ -79,7 +79,6 @@ hr {
 
 #lastUpdated,
 #lastReason {
-    padding-top: 20px;
     font-weight: 500;
     font-size: large;
     color: white;
@@ -87,8 +86,18 @@ hr {
     opacity: 0.75;
 }
 
-#lastReason {
-    padding-top: 0px;
+.update-block {
+    display: none;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin: 20px;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 90%;
 }
 
 .carousel-control-next-icon,

@@ -73,6 +73,7 @@ function getLastUpdateTime() {
         success: function(data, textStatus, xhr) {
             if (xhr.status === 200) {
                 var date = data[0].commit.committer.date;
+                var message = data[0].commit.message;
                 newtime = new Date(date);    
                 if (newtime instanceof Date && !isNaN(newtime)) {
                     var month = newtime.getMonth();
@@ -87,8 +88,10 @@ function getLastUpdateTime() {
                     minutes = minutes.toString().padStart(2, '0');
                     var theTime = hours + ':' + minutes + ' ' + ampm;
                     $("#lastUpdated").html('Page Last Updated: ' + theDate + ' at ' + theTime + ' EST.');
+                    $("#lastReason").html('<div id="reason">Update Reason: ' + message + '</div>');
                 } else {
                     $("#lastUpdated").replaceWith('');
+                    $("#lastReason").replaceWith('');
                 }
             }
         },

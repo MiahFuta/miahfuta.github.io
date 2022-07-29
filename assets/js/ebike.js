@@ -87,7 +87,7 @@ function getLastUpdateTime() {
                     hours = hours ? hours : 12;
                     minutes = minutes.toString().padStart(2, '0');
                     var theTime = hours + ':' + minutes + ' ' + ampm;
-                    $("#lastUpdated").html('Page Last Updated: ' + theDate + ' at ' + theTime + ' EST.');
+                    $("#lastUpdated").html('Page Last Updated on ' + theDate + ' at ' + theTime + ' EST.');
                     $("#lastReason").html('<div id="reason">Reason: ' + message + '</div>');
                     $(".update-block").css('display', 'inline-block');
                 } else {
